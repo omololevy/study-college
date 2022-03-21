@@ -17,6 +17,7 @@
                     <p class="card-text">{{cohort.description}}</p>
                     {% if request.user.profile.cohort == cohort %}
                     <a href="{% url 'leave-cohort' cohort.id %}" class="btn btn-outline-danger btn-sm">Leave Cohort</a>
+                    <a href="{% url 'single-cohort' user.profile.cohort.id %}" class="btn btn-info btn-sm">Open</a>
                     {% elif not request.user.profile.cohort %}
                     <a href="{% url 'join-cohort' cohort.id %}" class="btn btn-primary btn-sm">Join Cohort</a>
                     {% endif %}
