@@ -7,19 +7,18 @@
     {% if user.is_authenticated %}
     <div class="text-white text-center" style="margin-top:15%">
         <h1>Enjoying the Learning...</h1>
-        <h5 style="margin-top:6%">Would you want to view our Modules?</h5>
+        <h5 style="margin-top:6%">Would you want to view the Modules?</h5>
         {% if user.profile.cohort %}
 
 
-        <a href="{% url 'single-cohort' user.profile.cohort.id %}" class="btn btn-sm btn-info mt-4">Explore Your
-            Cohort: <em><b><h5>{{user.profile.cohort.name}}</h5></b></em> 
+        <a href="{% url 'single-cohort' user.profile.cohort.id %}" class="btn btn-sm btn-info mt-4">Dive into Your Course: <em><b><h5>{{user.profile.cohort.name}}</h5></b></em> 
         </a>
 
 
         {% else %}
 
         <a href=""> &nbsp;
-            You Haven't Joined Any Cohort Yet!
+            You No Active Course(s) Yet!
         </a>
 
         {% endif %}
@@ -30,8 +29,8 @@
 
     <div class="text-white text-center" style="margin-top:15%">
         <h1>Welcome to Study-College!</h1>
-        <h5 style="margin-top:6%">Be Aware of Anything and Everything Happening Around You</h5>
-        <a href="{% url 'cohort' %}" class="btn btn-sm btn-info mt-4">Register to a Cohort</a>
+        <h5 style="margin-top:6%">Be Up-to-date with the current technologies</h5>
+        <a href="{% url 'cohort' %}" class="btn btn-sm btn-info mt-4">Register to a Course</a>
     </div>
     {% endif %}
 </div>
