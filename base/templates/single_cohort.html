@@ -17,7 +17,7 @@
                             <h6 class="card-text">
                                 <span><strong>{{cohort.members.count}}</strong> Member{{cohort.members.count|pluralize}}</span>
                                 | <strong>{{ cohort.module.count }}</strong> Modules | <strong>
-                                {{ cohort.cohort_post.count }}</strong> Topic{{ cohort.cohort_post.count|pluralize }}
+                                {{ cohort.cohort_topic.count }}</strong> Topic{{ cohort.cohort_topic.count|pluralize }}
                             </h6>
                             <p class="card-text">{{cohort.description}}</p>
                                 <span class="text-info">Technical Mentor:</span>
@@ -37,7 +37,7 @@
             <div class="col-md-12">
                 <a href="" class="btn btn-sm btn-info mb-4 mr-4" data-toggle="modal" data-target="#ModalCenter">Add
                     module</a>
-                <a class="btn btn-sm btn-info mb-4" href="{% url 'post' cohort.id %}">New Post</a>
+                <a class="btn btn-sm btn-info mb-4" href="{% url 'topic' cohort.id %}">New topic</a>
                 {% if cohort.admin == user.profile %}
                 <a href="{% url 'members' cohort.id %}" class="btn btn-sm btn-info mb-4 ml-4">Members</a>
                 {% endif %}
@@ -65,17 +65,17 @@
                     </div>
                     {% endfor %}
                 </div>
-                <h5 class="D-block mx-auto tt">Posts</h5>
+                <h5 class="D-block mx-auto tt">topics</h5>
                 <div class="row">
-                    {% for post in posts %}
+                    {% for topic in topics %}
                     <div class="col-md-4">
-                        <div class="card mb-4 hpost">
+                        <div class="card mb-4 htopic">
                             <div class="card-body">
-                                <h5 class="card-title">{{post.title}}</h5>
-                                <p class="card-text">" {{post.post}} "
+                                <h5 class="card-title">{{topic.title}}</h5>
+                                <p class="card-text">" {{topic.topic}} "
                                 </p>
                                 <p class="card-text">By: <small class="text-white">
-                                    {{ post.user.user.username|title }}</small> <small style="float:right">{{post.date|date}}</small>
+                                    {{ topic.user.user.username|title }}</small> <small style="float:right">{{topic.date|date}}</small>
                                 </p>
                             </div>
                         </div>

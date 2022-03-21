@@ -8,7 +8,7 @@
         <div class="col-md-2"></div>
         <div class="col-md-8 bg-white poster">
             <button class="btn btn-sm btn-outline-info" ><a href="{% url 'single-hood' user.profile.neighbourhood.id %}">&laquo Back</a></button>
-            <h3 class="text-center tt ">Add a post to your hood</h3>
+            <h3 class="text-center tt ">Add a post to your cohort</h3>
             <form action="" method="post" novalidate>
                 {% csrf_token %}
                 {{ form|crispy }}
