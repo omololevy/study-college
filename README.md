@@ -69,3 +69,8 @@
  ![](	https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white) ![](https://img.shields.io/badge/ubuntu-87CF3E?style=for-the-badge&logo=ubuntu&logoColor=white)
 
 
+## LICENSE
+
+[MIT License](https://github.com/omololevy/study-college/blob/master/LICENSE)
+
+Copyright (c) 2022
