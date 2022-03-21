@@ -162,7 +162,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 django_on_heroku.settings(locals())
 
 cloudinary.config( 
-  cloud_name = config('cloud_name'), 
-  api_key = config('api_key'), 
-  api_secret = config('api_secret'),
+  cloud_name = "dim8pysls", 
+  api_key = "111589689929649", 
+  api_secret = "fICQAMAqo4kM-6a84vTPlUXtmtc",
 )

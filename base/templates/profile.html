@@ -9,8 +9,8 @@
             <img class="rounded-circle account-img d-block mx-auto" src="{{ user.profile.profile_picture.url }}"height="125px" width="125px">
             <h5 class="text-center mt-3">{{user.username}}</h5>
             <p class="text-center"> {{user.email}}</p>
-            {% if request.user.profile.neighbourhood %}
-            <p class="text-center">Current Hood <a class="btn btn-sm btn-info" href="{% url 'single-hood' user.profile.neighbourhood.id %}">{{ user.profile.neighbourhood.name }}</a>
+            {% if request.user.profile.cohort %}
+            <p class="text-center">Current Cohort <a class="btn btn-sm btn-info" href="{% url 'single-cohort' user.profile.cohort.id %}">{{ user.profile.cohort.name }}</a>
             </p>
 
             {% endif %}
