@@ -20,14 +20,10 @@
                                 {{ cohort.cohort_post.count }}</strong> Topic{{ cohort.cohort_post.count|pluralize }}
                             </h6>
                             <p class="card-text">{{cohort.description}}</p>
-                            <p class="card-text"><span class="text-info">Police Info:</span>
-                                &nbsp;<strong>{{cohort.police_info}}</strong> <br>
-                                <span class="text-info">Police Officer:</span>
-                                &nbsp;<strong>{{cohort.police_officer}}</strong><br><br>
-                                <span class="text-info">Hospital Info:</span>
-                                <strong>{{cohort.health_info}}</strong><br>
-                                <span class="text-info">Doctor:</span>
-                                &nbsp;<strong>{{cohort.health_officer}}</strong></p>
+                                <span class="text-info">Technical Mentor:</span>
+                                &nbsp;<strong>{{cohort.t_mentor}}</strong><br><br>
+                                <span class="text-info">Class Rep:</span>
+                                <strong>{{cohort.class_rep}}</strong><br>
                             <p class="card-text">Cohort Admin: <small class="text-muted">
                                 {{ cohort.admin.user.username }}</small></p>
                         </div>
