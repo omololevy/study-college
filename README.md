@@ -7,7 +7,7 @@
   * This is the live [link to the app ](https://study-college.herokuapp.com/)
 ## File Structure
 
-```
+~~~
 |-Study-College
     |-base/
         |-migrations/
@@ -55,10 +55,10 @@
     |-Procfile
     |-README.md
     |-requirements.txt
-
-    ```
+~~~
 
 ## Technologies Used
+
 ![](https://img.shields.io/badge/html5-orange?style=for-the-badge&logo=html5&logoColor=white) ![](https://img.shields.io/badge/css3-430098?style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/javascript-yellow?style=for-the-badge&logo=javascript&logoColor=white)  ![](https://img.shields.io/badge/python-276DC3?style=for-the-badge&logo=python&logoColor=white)
 ![](https://img.shields.io/badge/Bootstrap-430098?style=for-the-badge&logo=bootstrap&logoColor=white)  ![](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white) 
@@ -69,3 +69,8 @@
  ![](	https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white) ![](https://img.shields.io/badge/ubuntu-87CF3E?style=for-the-badge&logo=ubuntu&logoColor=white)
 
 
+## LICENSE
+
+[MIT License](https://github.com/omololevy/study-college/blob/master/LICENSE)
+
+Copyright (c) 2022
