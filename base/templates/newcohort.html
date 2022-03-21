@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <h3 class="text-center">Add Modules Here</h3>
+            <h3 class="text-center">Create Modules Here</h3>
             <form action="" method="post" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn btn-sm btn-success">Add Module</button>
+                <button class="btn btn-sm btn-success">Create a Module</button>
                 <button class="btn btn-sm btn-outline-danger"><a href="{% url 'cohort' %}">Cancel</a></button>
 
             </form>
