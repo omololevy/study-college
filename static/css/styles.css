@@ -10,6 +10,9 @@ body {
     height: 30px;
     width: 30px;
 }
+.dark{
+    color: aqua;
+}
 .col-form-label {
     font-weight: bold;
 }
