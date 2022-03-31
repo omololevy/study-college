@@ -73,7 +73,7 @@ class Module(models.Model):
 
 class Discussion(models.Model):
     title = models.CharField(max_length=120, null=True)
-    topic= models.TextField()
+    content= models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='topic_owner')
     cohort = models.ForeignKey(Cohort, on_delete=models.CASCADE, related_name='cohort_topic')
