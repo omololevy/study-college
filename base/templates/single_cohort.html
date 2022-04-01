@@ -13,6 +13,10 @@
                     <div class="col-md-7">
                         <div class="card-body">
                             <h5 class="card-title tt">{{ cohort.name }} ({{cohort.location}})
+                                {% if request.user.profile.cohort == cohort %}
+                    
+                                <a class="btn btn-warning btn-sm">ACTIVE!!</a>
+                                {%endif%}
                             </h5>
                             <h6 class="card-text">
                                 <span><strong>{{cohort.members.count}}</strong> Member{{cohort.members.count|pluralize}}</span>
@@ -26,6 +30,13 @@
                                 <strong>{{cohort.class_rep}}</strong><br>
                             <p class="card-text">Cohort Admin: <small class="text-muted">
                                 {{ cohort.admin.user.username }}</small></p>
+                                <hr>
+                                {% if request.user.profile.cohort == cohort %}
+                    
+                                <!-- <a href="{% url 'single-cohort' user.profile.cohort.id %}" class="btn btn-info btn-sm">Open</a> -->
+                                <a href="{% url 'leave-cohort' cohort.id %}" class="btn btn-outline-danger btn-sm">Deregister!</a>
+                                <!-- <a class="btn btn-warning btn-sm">ACTIVE!!</a> -->
+                                {%endif%}
                         </div>
                     </div>
                 </div>
@@ -35,12 +46,14 @@
     <div class="container bg-white cohorte">
         <div class="row">
             <div class="col-md-12">
+                {% if request.user.profile.cohort == cohort %}
                 <a href="" class="btn btn-sm btn-info mb-4 mr-4" data-toggle="modal" data-target="#ModalCenter">Create
                     a Module</a>
                 <a class="btn btn-sm btn-info mb-4" href="{% url 'topic' cohort.id %}">New topic</a>
                 {% if cohort.admin == user.profile %}
                 <a href="{% url 'members' cohort.id %}" class="btn btn-sm btn-info mb-4 ml-4">Members</a>
                 {% endif %}
+                {%endif%}
                 <form class="form-inline" method="get" action="{% url 'search' %}">
                     {% csrf_token %}
                     <div class="md-form my-0">
@@ -65,7 +78,7 @@
                     </div>
                     {% endfor %}
                 </div>
-                <h5 class="D-block mx-auto tt">Topics</h5>
+                <h5 class="D-block mx-auto tt">Discussions</h5>
                 <div class="row">
                     {% for topic in topics %}
                     <div class="col-md-4">
