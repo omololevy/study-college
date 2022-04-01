@@ -1,0 +1,48 @@
+<nav id="sidebar" class="">
+    <div class="sidebar-header ">
+        <h3><a href="{% url 'index' %}">Study-College</a></h3>
+        <strong><i class="fas fa-home"></i></strong>
+    </div>
+    {% if user.is_authenticated %}
+    <ul class="list-unstyled components mr-2 ml-2">
+        <li class="mb-4">
+            <a href="{% url 'profile' user.username %}">
+                <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" alt="">
+                &nbsp; Profile
+            </a>
+
+        </li>
+        <li class="mb-4">
+            <a href="{% url 'edit-profile' user.username %}">
+                <i class="fas fa-edit"></i>&nbsp;
+                &nbsp; Edit Profile
+            </a>
+        </li>
+        <li class="mb-4">
+            <a href="{% url 'cohort' %}">
+                <i class="fas fa-home"></i>&nbsp;
+                &nbsp; Cohorts
+            </a>
+        </li>
+
+        {% if user.profile.cohort %}
+        <li class="mb-4">
+            <a href="{% url 'single-cohort' user.profile.cohort.id %}">
+                <i class="fas fa-paper-plane"></i>&nbsp;
+                &nbsp;{{user.profile.cohort.name}}
+            </a>
+        </li>
+        {% else %}
+        <li class="mb-4">
+            <a href=""> &nbsp;
+                No Cohort Yet
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+    <div class="logout ml-2 mr-2 ">
+        <a href="{% url 'logout' %}" class="btn btn-sm btn-outline-danger d-block mx-auto"> Logout</a>
+    </div>
+
+    {% endif%}
+</nav>
