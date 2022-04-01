@@ -24,7 +24,8 @@
                     {% if request.user.profile.cohort == cohort %}
                     
                     <a href="{% url 'single-cohort' user.profile.cohort.id %}" class="btn btn-info btn-sm">Open</a>
-                    <a href="{% url 'leave-cohort' cohort.id %}" class="btn btn-outline-danger btn-sm">Deregister!</a>
+                    <!-- <a href="{% url 'leave-cohort' cohort.id %}" class="btn btn-outline-danger btn-sm">Deregister!</a> -->
+                    <a class="btn btn-warning btn-sm">ACTIVE!!</a>
                     {% elif not request.user.profile.cohort %}
                     <a href="{% url 'join-cohort' cohort.id %}" class="btn btn-primary btn-sm">Register Now!</a>
                     {% else %}
