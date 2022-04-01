@@ -19,13 +19,16 @@
                     <h6 class="card-title">{{ cohort.name }} ({{cohort.location}}) <span class="ml-4">{{cohort.members.count}} member{{cohort.members.count|pluralize}}</span>
                     </h6>
                     <p class="card-text">{{cohort.description}}</p>
-                    <a href="{% url 'single-cohort' cohort.id %}" class="btn btn-outline-info btn-sm">Details!</a>
+
+                    
                     {% if request.user.profile.cohort == cohort %}
                     
                     <a href="{% url 'single-cohort' user.profile.cohort.id %}" class="btn btn-info btn-sm">Open</a>
                     <a href="{% url 'leave-cohort' cohort.id %}" class="btn btn-outline-danger btn-sm">Deregister!</a>
                     {% elif not request.user.profile.cohort %}
                     <a href="{% url 'join-cohort' cohort.id %}" class="btn btn-primary btn-sm">Register Now!</a>
+                    {% else %}
+                    <a href="{% url 'single-cohort' cohort.id %}" class="btn btn-outline-info btn-sm">Details!</a>
                     {% endif %}
                 </div>
             </div>
