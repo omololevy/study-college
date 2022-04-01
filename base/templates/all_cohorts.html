@@ -2,24 +2,30 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
-        <a href="{% url 'new-cohort' %}" class="btn btn-sm btn-info mb-2"> Add New</a>
-        <p class="dark">These are some of the active courses available at our portal. <br>
-        Feel free to register to any course of your interest.</p>
-        <h6 class="dark">Note:</h6>
-        <p class="dark">You <strong>can only </strong>register to <b>one course only</b> at a time</p>
+    {% if request.user.is_staff %}
+    <a href="{% url 'new-cohort' %}" class="btn btn-sm btn-info mb-2"> Add New</a>
+    {%endif%}
+    <p class="dark">These are some of the active courses available at our portal. <br>
+        Feel free to register for any course of your interest.</p>
+    <h6 class="dark">Note:</h6>
+    <p class="dark">You <strong>can only </strong>register to <b>one course only</b> at a time</p>
     <div class="row">
         {% for cohort in all_cohorts %}
         <div class="col-md-4">
             <div class="card mb-4" style="min-height:340px">
-                <img src="{{ cohort.cohort_logo.url }}" class="card-img-top" alt="{{ cohort.name }}" style="width: auto; height:20rem;">
+                <img src="{{ cohort.cohort_logo.url }}" class="card-img-top" alt="{{ cohort.name }}"
+                    style="width: auto; height:20rem;">
                 <div class="card-body">
-                    <h6 class="card-title">{{ cohort.name }}  ({{cohort.location}}) <span class="ml-4">{{cohort.members.count}} member{{cohort.members.count|pluralize}}</span></h6>
+                    <h6 class="card-title">{{ cohort.name }} ({{cohort.location}}) <span class="ml-4">{{cohort.members.count}} member{{cohort.members.count|pluralize}}</span>
+                    </h6>
                     <p class="card-text">{{cohort.description}}</p>
+                    <a href="{% url 'single-cohort' cohort.id %}" class="btn btn-outline-info btn-sm">Details!</a>
                     {% if request.user.profile.cohort == cohort %}
-                    <a href="{% url 'leave-cohort' cohort.id %}" class="btn btn-outline-danger btn-sm">Leave Cohort</a>
+                    
                     <a href="{% url 'single-cohort' user.profile.cohort.id %}" class="btn btn-info btn-sm">Open</a>
+                    <a href="{% url 'leave-cohort' cohort.id %}" class="btn btn-outline-danger btn-sm">Deregister!</a>
                     {% elif not request.user.profile.cohort %}
-                    <a href="{% url 'join-cohort' cohort.id %}" class="btn btn-primary btn-sm">Join Cohort</a>
+                    <a href="{% url 'join-cohort' cohort.id %}" class="btn btn-primary btn-sm">Register Now!</a>
                     {% endif %}
                 </div>
             </div>
